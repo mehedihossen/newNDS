@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | Notre Dame School UK</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <style>
+    /* Three dots menu icon positioning */
+    .card-header {
+      position: relative;
+    }
+    .menu-dots {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.2s ease-in-out;
+    }
+    .menu-dots:hover {
+      color: white;
+    }
+    /* Sidebar enrolled nested list */
+    .nested-list {
+      padding-left: 1.5rem; /* Indent */
+      font-size: 0.875rem; /* Smaller text */
+      color: #555;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    .nested-list a {
+      display: block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem; /* rounded */
+      transition: background-color 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nested-list a:hover {
+      background-color: #e0e7ff; /* light blue hover */
+      color: #3b82f6; /* blue text */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between bg-white px-6 py-3 shadow-sm sticky top-0 z-40">
+    <div class="flex items-center space-x-4">
+      <!-- Hamburger (Mobile only) -->
+      <button id="mobile-menu-toggle" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Open menu">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <!-- Logo & Title -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/School_icon.svg/1024px-School_icon.svg.png"
+        alt="Logo"
+        class="h-8"
+      />
+      <span class="font-semibold text-xl select-none">Notre Dame School</span>
+    </div>
+
+    <!-- Right side -->
+    <div class="flex items-center space-x-4">
+      <img
+        src="https://randomuser.me/api/portraits/men/75.jpg"
+        alt="Profile"
+        class="h-8 w-8 rounded-full object-cover"
+      />
+    </div>
+  </header>
+
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 p-6 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 z-50 overflow-y-auto"
+    >
+      <!-- Close Button (Mobile) -->
+      <div class="flex justify-end mb-4 md:hidden">
+        <button id="close-sidebar" class="text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Close menu">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+      <nav class="space-y-2 text-gray-700 text-sm font-medium">
+        <a href="#" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md px-3 py-2">
+          <i class="fas fa-home text-lg"></i>
+          <span>Home</span>
+        </a>
+
+        <!-- Enrolled section -->
+        <div>
+          <button id="enrolled-toggle" class="flex items-center justify-between w-full hover:bg-gray-100 rounded-md px-3 py-2 focus:outline-none">
+            <span class="flex items-center space-x-3">
+              <i class="fas fa-graduation-cap text-lg"></i>
+              <span>Enrolled</span>
+            </span>
+            <i id="enrolled-arrow" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div id="enrolled-list" class="nested-list hidden mt-1">
+            <a href="course.html?course=machine-learning-theory" title="Machine Learning Theory">Machine Learning Theory</a>
+            <a href="course.html?course=machine-learning-lab-cse-17" title="Machine Learning Lab @CSE 17">Machine Learning Lab @CSE 17</a>
+            <a href="course.html?course=cse-4204-computer-graphics" title="CSE 4204 Computer Graphics">CSE 4204 Computer Graphics</a>
+            <a href="course.html?course=vlsi-design" title="VLSI Design">VLSI Design</a>
+            <a href="course.html?course=computer-graphics" title="Computer Graphics">Computer Graphics</a>
+            <a href="course.html?course=thesis-project-cse-17" title="Thesis/Project_CSE 17">Thesis/Project_CSE 17</a>
+            <a href="course.html?course=cse-4110-digital-image-processing" title="CSE 4110 Digital Image Processing">CSE 4110 Digital Image Processing</a>
+            <a href="course.html?course=lab-digital-system-design" title="Lab_Digital System Design">Lab_Digital System Design</a>
+            <a href="course.html?course=digital-system-design" title="Digital System Design">Digital System Design</a>
+            <a href="course.html?course=os-theory-cse-17" title="OS -Theory @CSE 17">OS -Theory @CSE 17</a>
+            <a href="course.html?course=os-lab-cse-17-spring-2023" title="OS LAB - (CSE 17) SPRING 2023">OS LAB - (CSE 17) SPRING 2023</a>
+            <a href="course.html?course=technical-writing" title="Technical Writing">Technical Writing</a>
+          </div>
+        </div>
+
+      <a href="settings.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md px-3 py-2">
+        <i class="fas fa-cog text-lg"></i>
+        <span>Settings</span>
+      </a>
+
+        <a href="login.html" class="flex items-center space-x-3 hover:text-red-600 px-3 py-2 rounded-md">
+          <i class="fas fa-sign-out-alt text-lg"></i>
+          <span>Logout</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Buttons -->
+      <div class="mt-auto pt-6 border-t border-gray-200 flex space-x-3">
+        <button
+          class="flex-1 border border-gray-300 hover:border-blue-600 rounded py-2 text-sm font-medium text-gray-700 hover:text-blue-700"
+        >
+          Join class
+        </button>
+        <button
+          class="flex-1 bg-blue-600 hover:bg-blue-700 rounded py-2 text-sm font-medium text-white"
+        >
+          Create class
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 overflow-auto p-6 md:ml-64">
+      <h2 class="text-3xl font-semibold mb-6 select-none">Classroom</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Course card examples -->
+
+        <a href="course.html?course=machine-learning-theory" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold text-lg">
+            <div>
+              Machine Learning Theory
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Abdul Hasnat Md. Saiful Islam
+              </div>
+              <div class="text-xs mt-1">
+                <span class="font-semibold">Due Saturday</span><br />
+                8:00 AM – SVM
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=machine-learning-lab-cse-17" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold text-lg">
+            <div>
+              Machine Learning Lab @CSE 17
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Abdul Hasnat Md. Saiful Islam
+              </div>
+              <div class="text-xs mt-1 opacity-90">
+                <span class="font-semibold">Due Saturday</span><br />
+                8:00 AM – SVM
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=cse-4204-computer-graphics" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-600 to-gray-500 text-white font-semibold text-lg">
+            <div>
+              CSE 4204 Computer Graphics
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Md. Tahmid Hasan
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=vlsi-design" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold text-lg">
+            <div>
+              VLSI Design
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Nafisa Tabassum
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=computer-graphics" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold text-lg">
+            <div>
+              Computer Graphics
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE-17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Humayara Binte Rashid
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=thesis-project-cse-17" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold text-lg">
+            <div>
+              Thesis/Project_CSE 17
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                CSE OBE
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=cse-4110-digital-image-processing" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold text-lg">
+            <div>
+              CSE 4110 Digital Image Processing
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE-17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Md. Tahmid Hasan
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=lab-digital-system-design" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold text-lg">
+            <div>
+              Lab_Digital System Design
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Shaheena Sultana
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=digital-system-design" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold text-lg">
+            <div>
+              Digital System Design
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Shaheena Sultana
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=os-theory-cse-17" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-red-500 to-red-400 text-white font-semibold text-lg">
+            <div>
+              OS -Theory @CSE 17
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Abdul Hasnat Md. Saiful Islam
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=os-lab-cse-17-spring-2023" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold text-lg">
+            <div>
+              OS LAB - (CSE 17) SPRING 2023
+              <span class="block text-sm font-normal opacity-90 mt-1">CSE 17</span>
+              <div class="text-xs mt-2 opacity-90">
+                Abdul Hasnat Md. Saiful Islam
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+        <a href="course.html?course=technical-writing" class="block group rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg bg-white">
+          <div class="relative px-5 py-4 card-header bg-gradient-to-r from-gray-600 to-gray-500 text-white font-semibold text-lg">
+            <div>
+              Technical Writing
+              <span class="block text-sm font-normal opacity-90 mt-1">A</span>
+              <div class="text-xs mt-2 opacity-90">
+                Md. Khorshed Alam
+              </div>
+            </div>
+            <div class="menu-dots">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-5 py-3 bg-white">
+            <button aria-label="Classwork" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-clipboard-list"></i>
+            </button>
+            <button aria-label="Folder" class="hover:text-blue-600 text-gray-600">
+              <i class="fas fa-folder"></i>
+            </button>
+          </div>
+        </a>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Sidebar toggle scripts -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      document.body.style.overflow = '';
+    });
+
+    // Enrolled toggle
+    const enrolledToggle = document.getElementById('enrolled-toggle');
+    const enrolledList = document.getElementById('enrolled-list');
+    const enrolledArrow = document.getElementById('enrolled-arrow');
+
+    enrolledToggle.addEventListener('click', () => {
+      enrolledList.classList.toggle('hidden');
+      enrolledArrow.classList.toggle('rotate-180');
+    });
+  </script>
+</body>
+</html>

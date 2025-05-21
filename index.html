@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre Dame School UK</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.6/dist/flowbite.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans">
+
+  <!-- Top Bar -->
+  <div class="bg-[#0072bb] text-white text-sm flex justify-between px-6 py-2">
+    <!-- International Dropdown -->
+    <div class="relative group">
+      <button class="flex items-center space-x-1 font-semibold">
+        <span>International</span>
+        <svg class="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <ul class="absolute left-0 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 bg-white text-sm text-left shadow-lg rounded-md mt-2 w-48 z-50">
+        <li class="flex items-center px-4 py-2 hover:bg-gray-100 space-x-3"><img src="https://flagcdn.com/w40/gb.png" class="w-5 h-3.5" alt="UK Flag"><span class="text-purple-800 font-medium">UK</span></li>
+        <li class="flex items-center px-4 py-2 hover:bg-gray-100 space-x-3"><img src="https://flagcdn.com/w40/ca.png" class="w-5 h-3.5" alt="Canada Flag"><span class="text-purple-800 font-medium">Canada</span></li>
+        <li class="flex items-center px-4 py-2 hover:bg-gray-100 space-x-3"><img src="https://flagcdn.com/w40/au.png" class="w-5 h-3.5" alt="Australia Flag"><span class="text-purple-800 font-medium">Australia</span></li>
+        <li class="flex items-center px-4 py-2 hover:bg-gray-100 space-x-3"><img src="https://flagcdn.com/w40/nz.png" class="w-5 h-3.5" alt="New Zealand Flag"><span class="text-purple-800 font-medium">New Zealand</span></li>
+        <li class="flex items-center px-4 py-2 hover:bg-gray-100 space-x-3"><img src="https://flagcdn.com/w40/ae.png" class="w-5 h-3.5" alt="UAE Flag"><span class="text-purple-800 font-medium">UAE</span></li>
+      </ul>
+    </div>
+
+    <div class="space-x-6">
+      <a href="#" class="hover:underline">Request a Demo</a>
+      <a href="login.html" class="hover:underline">Log In</a>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="bg-white shadow flex items-center justify-between px-6 py-4">
+    <div class="flex items-center space-x-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/School_icon.svg/1024px-School_icon.svg.png" class="h-8" alt="Logo" />
+      <span class="text-[#0072bb] font-bold text-2xl">Notre Dame School</span>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <!-- Product -->
+      <li class="relative group">
+        <button class="flex items-center hover:text-[#ff9f1c]">Product
+          <svg class="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+        <ul class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 bg-white shadow rounded mt-2 py-2 w-40 z-50">
+          <a href="courses.html" class="block px-4 py-2 hover:bg-gray-100">Courses</a>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Features</a></li>
+        </ul>
+      </li>
+      <!-- Success -->
+      <li class="relative group">
+        <button class="flex items-center hover:text-[#ff9f1c]">Success
+          <svg class="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+        <ul class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 bg-white shadow rounded mt-2 py-2 w-40 z-50">
+          <li><a href="#testimonials" class="block px-4 py-2 hover:bg-gray-100">Testimonials</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="#about" class="hover:text-[#ff9f1c]">About</a></li>
+      <a href="contact.html" class="hover:underline">Contact Us</a>
+    </ul>
+
+    <!-- Removed "I am a..." dropdown here -->
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden flex items-center">
+      <button id="menu-toggle" class="text-[#0072bb] focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-between items-center px-4 py-4 border-b">
+      <h2 class="text-[#0072bb] font-bold text-lg">Menu</h2>
+      <button id="close-menu" class="text-gray-600">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <ul class="px-4 py-6 space-y-4 text-gray-800 font-medium">
+      <li><a href="#" class="block hover:text-[#ff9f1c]">Product</a></li>
+      <li><a href="#testimonials" class="block hover:text-[#ff9f1c]">Success</a></li>
+      <li><a href="#about" class="block hover:text-[#ff9f1c]">About</a></li>
+      <li><a href="contact.html" class="block hover:text-[#ff9f1c]">Contact</a></li>
+      <li><a href="courses.html" class="block hover:text-[#ff9f1c]">Courses</a></li>
+      <li><a href="login.html" class="block hover:text-[#ff9f1c]">Login</a></li>
+      <li><a href="#" class="block hover:text-[#ff9f1c]">Request a Demo</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('pexels-max-fischer-5212331.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-5xl font-extrabold mb-4">Welcome to Notre Dame School</h1>
+      <p class="text-xl max-w-2xl mx-auto">Empowering Future Through Excellence in Education</p>
+
+      <a href="register.html"><button class="mt-6 px-6 py-3 bg-[#ff9f1c] hover:bg-[#ffbf69] text-white font-bold rounded transition duration-300">Get Started</button></a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-semibold mb-6 text-center text-[#1e91d6]">About Us</h3>
+      <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+        Notre Dame School UK is a forward-thinking educational institution committed to academic excellence, spiritual growth, and personal development. We offer an inclusive environment where every student thrives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses" class="py-20 bg-[#ffecd1] fade-in">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-semibold mb-8 text-center text-[#ff9f1c]">Our Courses</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 shadow-lg rounded-lg hover:scale-105 transform transition">
+          <h4 class="text-xl font-bold mb-2 text-[#0072bb]">A-Level Mathematics</h4>
+          <p>Deepen your understanding of core mathematical concepts with expert support.</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg hover:scale-105 transform transition">
+          <h4 class="text-xl font-bold mb-2 text-[#0072bb]">Science Stream</h4>
+          <p>Explore physics, chemistry and biology with hands-on learning experiences.</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg hover:scale-105 transform transition">
+          <h4 class="text-xl font-bold mb-2 text-[#0072bb]">Spiritual & Moral Studies</h4>
+          <p>Rooted in values and ethics, these classes shape character and purpose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-[#d1e9f8] fade-in">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-semibold mb-8 text-[#1e91d6]">What Students Say</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <blockquote class="bg-white p-6 rounded-lg shadow">
+          "Notre Dame gave me the confidence and clarity I needed to excel in my exams!"
+          <footer class="mt-4 font-semibold text-[#1e91d6]">— Aisha R.</footer>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-lg shadow">
+          "Supportive teachers and excellent resources made all the difference."
+          <footer class="mt-4 font-semibold text-[#1e91d6]">— Haroon M.</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-20 fade-in">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-[#ff9f1c]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.04 3.118a1 1 0 01-.272 1.068L9.2 9.8a11.042 11.042 0 005 5l1.93-1.93a1 1 0 011.068-.272l3.118 1.04a1 1 0 01.684.948V19a2 2 0 01-2 2h-1c-8.837 0-16-7.163-16-16V5z"/>
+            </svg>
+            <div>
+              <h4 class="text-lg font-bold text-gray-800">Phone and WhatsApp</h4>
+              <p class="text-[#0072bb]">+44 7418 364456</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-[#ff9f1c]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 8l7.89 5.26a3 3 0 003.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <div>
+              <h4 class="text-lg font-bold text-gray-800">Email</h4>
+              <p class="text-[#0072bb]">notredame@email.com</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-[#ff9f1c]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13 2a10 10 0 11-2 0v10H8v4h8v-4h-3V2z"/>
+            </svg>
+            <div>
+              <h4 class="text-lg font-bold text-gray-800">Socials</h4>
+              <div class="flex space-x-3 mt-1 text-[#0072bb]">
+                <a href="#" class="hover:text-[#ff9f1c]"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-[#ff9f1c]"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#ff9f1c]"><i class="fab fa-google"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h3 class="text-2xl font-bold text-[#0072bb] mb-2">Hello, there! We’d love to hear from you.</h3>
+          <p class="text-sm text-gray-600 mb-6">Fill out the below form for any queries or to request Free Trials. Our team is available 24/7 to respond.</p>
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Your Name" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#ff9f1c] col-span-1" />
+            <input type="email" placeholder="Your Email" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#ff9f1c] col-span-1" />
+            <input type="text" placeholder="City/County" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#ff9f1c] col-span-1" />
+            <input type="tel" placeholder="Phone" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#ff9f1c] col-span-1" />
+            <textarea placeholder="Your Message..." rows="4" class="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#ff9f1c] col-span-2"></textarea>
+            <button type="submit" class="bg-[#ff9f1c] text-white font-semibold px-6 py-3 rounded hover:bg-[#ffbf69] col-span-2">Submit Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0047BA] text-white py-6 text-center">
+    <p>&copy; 2025 Notre Dame School UK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      document.body.style.overflow = 'hidden'; // Disable background scroll
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      document.body.style.overflow = ''; // Re-enable background scroll
+    });
+  </script>
+
+</body>
+</html>
